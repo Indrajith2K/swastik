@@ -1,7 +1,4 @@
-
-
+import { toNodeListener, fromWebHandler } from 'h3-v2';
 import server from '../dist/server/server.js';
 
-export default function (request) {
-  return server.fetch(request);
-}
+export default toNodeListener(fromWebHandler(server.fetch));
