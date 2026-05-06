@@ -2,54 +2,55 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CheckCircle2 } from "lucide-react";
 import hardwareCloseup from "../assets/hardware-collection.png";
 import plywoodWorkshop from "../assets/modular-kitchen.png";
+import heroBg from "../assets/hero-showroom.png";
 import { EnquiryPanel } from "../components/site/EnquiryPanel";
 import { ProductCard } from "../components/site/ProductCard";
 import { productCategories } from "../data/site";
 
 export const Route = createFileRoute("/products")({
-  head: () => ({ meta: [
-    { title: "Products | Premium Hardware, Plywood, Kitchen & Tools" },
-    { name: "description", content: "Explore door hardware, plywood, laminates, modular kitchen fittings, bathroom glass, tools and sliding aluminium systems." },
-    { property: "og:title", content: "Products | Swastik & Company" },
-    { property: "og:description", content: "Premium categories for hardware, boards, kitchen fittings, glass systems and tools in Erode." },
-  ] }),
   component: ProductsPage,
 });
 
 function ProductsPage() {
   return (
-    <main className="bg-zinc-50 pb-24">
-      {/* Hero Section for Products */}
-      <section className="bg-zinc-950 px-6 py-32 text-center text-white sm:px-12 lg:px-24 lg:py-40">
-        <div className="mx-auto max-w-4xl">
-          <span className="mb-6 inline-block text-xs font-bold uppercase tracking-widest text-amber-500">Product Catalogue</span>
-          <h1 className="font-display text-5xl font-black tracking-tight sm:text-6xl lg:text-7xl">
-            A modular catalogue for <br />
-            <span className="text-zinc-500">every build stage.</span>
+    <main className="bg-white pb-24 font-sans text-stone-800">
+      
+      {/* ── HERO SECTION ─────────────────────────────────────────── */}
+      <section className="relative w-full h-[400px] lg:h-[500px] overflow-hidden bg-stone-900">
+        <div className="absolute inset-0">
+          <img src={heroBg} alt="Products Background" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-[#cca65c]/80 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-900/50 to-transparent" />
+        </div>
+        
+        <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-6">
+          <span className="mb-4 inline-block text-xs font-bold uppercase tracking-widest text-white/80">Product Catalogue</span>
+          <h1 className="font-display text-4xl sm:text-5xl font-bold text-white tracking-wide">
+            OUR PRODUCTS
           </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-zinc-400 sm:text-xl">
-            From the first plywood board to the final handle finish, each range is organized so you can compare, select and source faster.
+          <p className="mt-4 text-lg text-white/90 font-medium max-w-xl mx-auto">
+            A modular catalogue for every build stage. Organized so you can compare, select, and source faster.
           </p>
         </div>
       </section>
 
       {/* Image Showcase */}
       <section className="px-6 py-12 sm:px-12 lg:px-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="-mt-32 mb-20 grid gap-8 lg:grid-cols-2">
-            <div className="aspect-[16/9] overflow-hidden rounded-3xl shadow-2xl">
-              <img src={hardwareCloseup} alt="Premium door handles, lock cylinders, hinges" className="h-full w-full object-cover transition-transform duration-1000 hover:scale-105" />
+        <div className="mx-auto max-w-[1400px]">
+          <div className="-mt-24 mb-20 grid gap-8 lg:grid-cols-2 relative z-20">
+            <div className="aspect-[16/9] overflow-hidden rounded-2xl shadow-xl border-4 border-white">
+              <img src={hardwareCloseup} alt="Premium door handles" className="h-full w-full object-cover transition-transform duration-1000 hover:scale-105" />
             </div>
-            <div className="aspect-[16/9] overflow-hidden rounded-3xl shadow-2xl lg:mt-16">
-              <img src={plywoodWorkshop} alt="Plywood sheets, laminates, kitchen" className="h-full w-full object-cover transition-transform duration-1000 hover:scale-105" />
+            <div className="aspect-[16/9] overflow-hidden rounded-2xl shadow-xl border-4 border-white lg:mt-16">
+              <img src={plywoodWorkshop} alt="Plywood sheets" className="h-full w-full object-cover transition-transform duration-1000 hover:scale-105" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Products Grid */}
-      <section className="px-6 pb-32 sm:px-12 lg:px-24">
-        <div className="mx-auto max-w-7xl">
+      <section className="px-6 pb-24 sm:px-12 lg:px-24">
+        <div className="mx-auto max-w-[1400px]">
           <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
             {productCategories.map((product, index) => <ProductCard key={product.slug} product={product} index={index} />)}
           </div>
@@ -57,22 +58,22 @@ function ProductsPage() {
       </section>
 
       {/* Selection Support */}
-      <section className="bg-white px-6 py-32 sm:px-12 lg:px-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16 text-center">
-            <span className="mb-4 inline-block text-xs font-bold uppercase tracking-widest text-amber-600">Selection Support</span>
-            <h2 className="font-display text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl">Expert Guidance</h2>
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-zinc-600">Share the usage, surface, budget and quantity. Our team can guide practical options for homes, workshops and construction sites.</p>
+      <section className="bg-[#f9f7f2] border-y border-stone-200 px-6 py-24 sm:px-12 lg:px-24">
+        <div className="mx-auto max-w-[1400px]">
+          <div className="mb-16 text-center max-w-2xl mx-auto">
+            <span className="text-[#cca65c] text-sm font-bold tracking-widest uppercase">Selection Support</span>
+            <h2 className="mt-4 font-display text-4xl font-bold text-stone-800">Expert Guidance</h2>
+            <p className="mt-4 text-stone-500 leading-relaxed">Share the usage, surface, budget and quantity. Our team can guide practical options for homes, workshops and construction sites.</p>
           </div>
           
           <div className="grid gap-8 lg:grid-cols-3">
             {["Residential Interiors", "Contractor Bulk Supply", "Architectural Finishing"].map((item) => (
-              <article key={item} className="rounded-3xl border border-zinc-200 bg-zinc-50 p-10 text-center shadow-xl shadow-zinc-200/50 transition-all hover:-translate-y-2 hover:shadow-2xl hover:shadow-zinc-200">
-                <div className="mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-full bg-amber-100 text-amber-600">
+              <article key={item} className="rounded-xl border border-stone-200 bg-white p-10 text-center shadow-sm transition-all hover:-translate-y-2 hover:shadow-lg">
+                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-lg bg-[#f9f7f2] border border-stone-100 text-[#cca65c] shadow-sm">
                   <CheckCircle2 className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-bold text-zinc-950">{item}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-zinc-600">Curated recommendations across strength, design, durability and availability.</p>
+                <h3 className="text-lg font-bold text-stone-800">{item}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-stone-500">Curated recommendations across strength, design, durability and availability.</p>
               </article>
             ))}
           </div>
@@ -80,11 +81,11 @@ function ProductsPage() {
       </section>
 
       {/* Enquiry Panel */}
-      <section className="px-6 pt-32 sm:px-12 lg:px-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12 text-center">
-            <span className="mb-4 inline-block text-xs font-bold uppercase tracking-widest text-amber-600">Request Availability</span>
-            <h2 className="font-display text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl">Get a product check before you visit.</h2>
+      <section className="bg-white px-6 py-24 sm:px-12 lg:px-24">
+        <div className="mx-auto max-w-[1400px]">
+          <div className="mb-12 text-center max-w-2xl mx-auto">
+            <span className="text-[#cca65c] text-sm font-bold tracking-widest uppercase">Request Availability</span>
+            <h2 className="mt-4 font-display text-3xl font-bold text-stone-800">Get a product check before you visit.</h2>
           </div>
           <EnquiryPanel />
         </div>

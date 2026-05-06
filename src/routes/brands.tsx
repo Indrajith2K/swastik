@@ -1,71 +1,82 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Award, ShieldCheck, Sparkles } from "lucide-react";
+import heroBg from "../assets/hero-showroom.png";
 import { brandNames } from "../data/site";
 
 export const Route = createFileRoute("/brands")({
-  head: () => ({ meta: [
-    { title: "Brands | Trusted Hardware & Interior Brands" },
-    { name: "description", content: "Explore trusted brands available through Swastik & Company for hardware, plywood, fittings, tools and interior solutions." },
-    { property: "og:title", content: "Brands | Swastik & Company" },
-    { property: "og:description", content: "A premium brand wall of trusted hardware, plywood, fitting and tool names." },
-  ] }),
   component: BrandsPage,
 });
 
 function BrandsPage() {
   return (
-    <main className="bg-zinc-50 pb-24">
-      {/* Hero Section for Brands */}
-      <section className="bg-zinc-950 px-6 py-32 text-center text-white sm:px-12 lg:px-24 lg:py-40">
-        <div className="mx-auto max-w-4xl">
-          <span className="mb-6 inline-block text-xs font-bold uppercase tracking-widest text-amber-500">Trusted Partners</span>
-          <h1 className="font-display text-5xl font-black tracking-tight sm:text-6xl lg:text-7xl">
-            Names builders recognize. <br />
-            <span className="text-zinc-500">Quality customers can feel.</span>
+    <main className="font-sans text-stone-800 bg-white pb-0">
+      
+      {/* ── HERO SECTION ─────────────────────────────────────────── */}
+      <section className="relative w-full h-[400px] lg:h-[500px] overflow-hidden bg-stone-900">
+        <div className="absolute inset-0">
+          <img src={heroBg} alt="Brands Background" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-[#cca65c]/80 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-900/50 to-transparent" />
+        </div>
+        
+        <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-6">
+          <span className="mb-4 inline-block text-xs font-bold uppercase tracking-widest text-white/80">Trusted Partners</span>
+          <h1 className="font-display text-4xl sm:text-5xl font-bold text-white tracking-wide">
+            OUR BRANDS
           </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-zinc-400 sm:text-xl">
-            We work exclusively with dependable brands across security hardware, kitchen systems, plywood, laminates, tools, adhesives, glass and bathroom fittings.
+          <p className="mt-4 text-lg text-white/90 font-medium max-w-xl mx-auto">
+            Names builders recognize. Quality customers can feel.
           </p>
         </div>
       </section>
 
-      {/* Brands Grid */}
-      <section className="px-6 py-32 sm:px-12 lg:px-24">
-        <div className="mx-auto max-w-7xl">
+      {/* ── BRANDS GRID ────────────────────────────────────────── */}
+      <section className="py-24 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-stone-800">Dependable Across Every Build</h2>
+            <p className="mt-4 text-stone-500 leading-relaxed">
+              We work exclusively with dependable brands across security hardware, kitchen systems, plywood, laminates, tools, adhesives, glass and bathroom fittings.
+            </p>
+          </div>
+
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
             {brandNames.map((brand) => (
-              <div key={brand} className="flex h-32 items-center justify-center rounded-2xl border border-zinc-200 bg-white p-6 text-center shadow-lg shadow-zinc-200/50 transition-all hover:-translate-y-1 hover:border-amber-500 hover:shadow-xl">
-                <span className="font-display text-lg font-bold tracking-wide text-zinc-950">{brand}</span>
+              <div key={brand} className="flex h-32 items-center justify-center rounded-xl border border-stone-200 bg-white p-6 text-center shadow-sm transition-all hover:-translate-y-1 hover:border-[#cca65c] hover:shadow-lg">
+                <span className="font-display text-lg font-bold tracking-wide text-stone-800">{brand}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Brand Promise */}
-      <section className="bg-zinc-950 px-6 py-32 text-white sm:px-12 lg:px-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16 text-center">
-            <span className="mb-4 inline-block text-xs font-bold uppercase tracking-widest text-amber-500">The Brand Promise</span>
-            <h2 className="font-display text-4xl font-bold tracking-tight text-white sm:text-5xl">Every recommendation balances finish, function and after-use reliability.</h2>
+      {/* ── BRAND PROMISE ──────────────────────────────────────── */}
+      <section className="bg-[#f9f7f2] border-y border-stone-200 py-24">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="mb-16 text-center max-w-3xl mx-auto">
+            <span className="text-[#cca65c] text-sm font-bold tracking-widest uppercase">The Brand Promise</span>
+            <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold text-stone-800">
+              Every recommendation balances finish, function and after-use reliability.
+            </h2>
           </div>
           
           <div className="grid gap-8 md:grid-cols-3">
             {[{ icon: ShieldCheck, title: "Durability First" }, { icon: Sparkles, title: "Finish Conscious" }, { icon: Award, title: "Trade Trusted" }].map((item) => { 
               const Icon = item.icon; 
               return (
-                <article key={item.title} className="rounded-3xl border border-zinc-800 bg-zinc-900 p-10 text-center transition-all hover:bg-zinc-800/80">
-                  <div className="mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-zinc-800">
-                    <Icon className="h-8 w-8 text-amber-500" />
+                <article key={item.title} className="rounded-xl border border-stone-200 bg-white p-10 text-center shadow-sm transition-all hover:shadow-lg hover:-translate-y-1">
+                  <div className="mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-lg bg-[#f9f7f2] border border-stone-100 shadow-sm">
+                    <Icon className="h-8 w-8 text-[#cca65c]" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">{item.title}</h3>
-                  <p className="mt-4 text-sm leading-relaxed text-zinc-400">Products are selected to suit real site conditions, design intent and long-term use.</p>
+                  <h3 className="text-xl font-bold text-stone-800">{item.title}</h3>
+                  <p className="mt-4 text-sm leading-relaxed text-stone-500">Products are selected to suit real site conditions, design intent and long-term use.</p>
                 </article>
               ); 
             })}
           </div>
         </div>
       </section>
+      
     </main>
   );
 }

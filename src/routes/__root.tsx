@@ -1,4 +1,4 @@
-import { Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { Link, createRootRoute, HeadContent, Scripts, ScrollRestoration } from "@tanstack/react-router";
 import { SiteShell } from "../components/site/SiteShell";
 import appCss from "../styles.css?url";
 
@@ -45,7 +45,11 @@ function RootShell({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>{children}<Scripts /></body>
+      <body>
+        {children}
+        <ScrollRestoration />
+        <Scripts />
+      </body>
     </html>
   );
 }
