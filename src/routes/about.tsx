@@ -20,10 +20,10 @@ function AboutPage() {
         </div>
         
         <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-6">
-          <h1 className="font-display text-4xl sm:text-5xl font-bold text-white tracking-wide">
+          <h1 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-wide">
             ABOUT US
           </h1>
-          <p className="mt-4 text-lg text-white/90 font-medium max-w-md">
+          <p className="mt-4 text-base sm:text-lg text-white/90 font-medium max-w-md">
             Premium hardware & Interiors for Erode's leading builders and homeowners
           </p>
         </div>
@@ -40,17 +40,17 @@ function AboutPage() {
             <p className="mt-6 text-stone-500 leading-relaxed">
               We provide high-quality hardware and building materials, from door fittings and laminates to kitchen, bathroom, and industrial solutions, ensuring durability, performance, and reliability for every project.
             </p>
-            <div className="mt-10 flex gap-4">
-              <Link to="/contact" className="inline-flex h-12 items-center justify-center rounded bg-[#cca65c] px-8 font-bold text-white transition-all hover:bg-[#b5904a]">
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 w-full">
+              <Link to="/contact" className="w-full sm:w-auto inline-flex h-12 items-center justify-center rounded bg-[#cca65c] px-8 font-bold text-white transition-all hover:bg-[#b5904a]">
                 Enquire Now
               </Link>
-              <Link to="/products" className="inline-flex h-12 items-center justify-center rounded border border-[#cca65c] text-[#cca65c] px-8 font-bold transition-all hover:bg-[#cca65c] hover:text-white">
+              <Link to="/products" className="w-full sm:w-auto inline-flex h-12 items-center justify-center rounded border border-[#cca65c] text-[#cca65c] px-8 font-bold transition-all hover:bg-[#cca65c] hover:text-white">
                 Explore Product
               </Link>
             </div>
           </div>
           
-          <div className="h-[400px] rounded-2xl overflow-hidden shadow-xl">
+          <div className="h-[300px] sm:h-[400px] rounded-2xl overflow-hidden shadow-xl mt-10 lg:mt-0">
             <img src={hardware} alt="Door Hardware" className="w-full h-full object-cover" />
           </div>
         </div>
@@ -90,19 +90,19 @@ function AboutPage() {
 
       {/* ── GOLD BANNER STATS ────────────────────────────────────── */}
       <section className="bg-[#cca65c] py-16">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-3 divide-x divide-white/20 text-center">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid grid-cols-1 gap-8 sm:gap-0 sm:grid-cols-3 sm:divide-x divide-white/20 text-center">
             <div className="px-4">
-              <p className="text-3xl sm:text-5xl font-bold text-white">30+</p>
-              <p className="mt-2 text-xs font-bold uppercase tracking-widest text-white/80">Years of Trust</p>
+              <p className="text-4xl sm:text-5xl font-bold text-white">30+</p>
+              <p className="mt-2 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/80">Years of Trust</p>
             </div>
-            <div className="px-4">
-              <p className="text-3xl sm:text-5xl font-bold text-white">250+</p>
-              <p className="mt-2 text-xs font-bold uppercase tracking-widest text-white/80">Satisfied Clients</p>
+            <div className="px-4 border-t sm:border-t-0 pt-8 sm:pt-0 border-white/20">
+              <p className="text-4xl sm:text-5xl font-bold text-white">250+</p>
+              <p className="mt-2 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/80">Satisfied Clients</p>
             </div>
-            <div className="px-4">
-              <p className="text-3xl sm:text-5xl font-bold text-white">5000+</p>
-              <p className="mt-2 text-xs font-bold uppercase tracking-widest text-white/80">Our Products</p>
+            <div className="px-4 border-t sm:border-t-0 pt-8 sm:pt-0 border-white/20">
+              <p className="text-4xl sm:text-5xl font-bold text-white">5000+</p>
+              <p className="mt-2 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/80">Our Products</p>
             </div>
           </div>
         </div>

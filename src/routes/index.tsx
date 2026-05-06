@@ -23,7 +23,7 @@ function Index() {
 
         <div className="relative z-20 h-full max-w-[1600px] mx-auto px-8 lg:px-16 pt-40 pb-64 flex items-center">
           <div className="max-w-3xl">
-            <h1 className="font-display text-5xl sm:text-7xl lg:text-[5.5rem] font-bold text-white leading-[1.05] tracking-tight">
+            <h1 className="font-display text-4xl sm:text-6xl lg:text-[5.5rem] font-bold text-white leading-[1.1] tracking-tight">
               All Your Hardware <br />
               Needs in <span className="text-[#cca65c] relative whitespace-nowrap">
                 One Place
@@ -37,14 +37,14 @@ function Index() {
               Empowering your architectural vision with uncompromising tools and highly dependable hardware solutions.
             </p>
             
-            <div className="mt-14 flex items-center gap-6">
-              <Link to="/contact" className="group relative inline-flex h-14 items-center justify-center overflow-hidden bg-[#cca65c] px-10 text-sm font-bold uppercase tracking-[0.2em] text-white transition-all hover:shadow-[0_0_40px_rgba(204,166,92,0.4)]">
+            <div className="mt-10 sm:mt-14 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full">
+              <Link to="/contact" className="group relative w-full sm:w-auto inline-flex h-14 items-center justify-center overflow-hidden bg-[#cca65c] px-10 text-sm font-bold uppercase tracking-[0.2em] text-white transition-all hover:shadow-[0_0_40px_rgba(204,166,92,0.4)]">
                 <span className="relative z-10 transition-transform duration-500 group-hover:-translate-y-full">Enquire Now</span>
                 <span className="absolute inset-0 z-10 flex items-center justify-center translate-y-full transition-transform duration-500 group-hover:translate-y-0 bg-[#b5904a]">
                   Enquire Now
                 </span>
               </Link>
-              <Link to="/products" className="group inline-flex h-14 items-center justify-center border border-white/30 bg-transparent px-10 text-sm font-bold uppercase tracking-[0.2em] text-white transition-all hover:border-white hover:bg-white hover:text-[#1a1814]">
+              <Link to="/products" className="group w-full sm:w-auto inline-flex h-14 items-center justify-center border border-white/30 bg-transparent px-10 text-sm font-bold uppercase tracking-[0.2em] text-white transition-all hover:border-white hover:bg-white hover:text-[#1a1814]">
                 Explore All
               </Link>
             </div>
@@ -64,27 +64,27 @@ function Index() {
       </section>
 
       {/* Floating Glass Stats Bar */}
-      <div className="relative z-30 max-w-[1400px] mx-auto w-[90%] -mt-[70px]">
-        <div className="bg-white/90 backdrop-blur-3xl border border-white shadow-[0_20px_50px_rgba(0,0,0,0.08)] rounded-xl py-10 px-8 sm:px-16 grid grid-cols-3 divide-x divide-stone-200">
-          <div className="text-center px-4">
-            <p className="text-4xl sm:text-5xl font-display font-bold text-[#1a1814]">250<span className="text-[#cca65c]">+</span></p>
-            <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-stone-400 mt-3">Happy Clients</p>
+      <div className="relative z-30 max-w-[1400px] mx-auto w-[95%] sm:w-[90%] -mt-[70px]">
+        <div className="bg-white/90 backdrop-blur-3xl border border-white shadow-[0_20px_50px_rgba(0,0,0,0.08)] rounded-xl py-6 sm:py-10 px-2 sm:px-16 grid grid-cols-3 divide-x divide-stone-200">
+          <div className="text-center px-2 sm:px-4">
+            <p className="text-2xl sm:text-5xl font-display font-bold text-[#1a1814]">250<span className="text-[#cca65c]">+</span></p>
+            <p className="text-[8px] sm:text-xs font-bold uppercase tracking-[0.1em] sm:tracking-[0.2em] text-stone-400 mt-2 sm:mt-3">Happy Clients</p>
           </div>
-          <div className="text-center px-4">
-            <p className="text-4xl sm:text-5xl font-display font-bold text-[#1a1814]">30<span className="text-[#cca65c]">+</span></p>
-            <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-stone-400 mt-3">Years Service</p>
+          <div className="text-center px-2 sm:px-4">
+            <p className="text-2xl sm:text-5xl font-display font-bold text-[#1a1814]">30<span className="text-[#cca65c]">+</span></p>
+            <p className="text-[8px] sm:text-xs font-bold uppercase tracking-[0.1em] sm:tracking-[0.2em] text-stone-400 mt-2 sm:mt-3">Years Service</p>
           </div>
-          <div className="text-center px-4">
-            <p className="text-4xl sm:text-5xl font-display font-bold text-[#1a1814]">5000<span className="text-[#cca65c]">+</span></p>
-            <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-stone-400 mt-3">Our Products</p>
+          <div className="text-center px-2 sm:px-4">
+            <p className="text-2xl sm:text-5xl font-display font-bold text-[#1a1814]">5000<span className="text-[#cca65c]">+</span></p>
+            <p className="text-[8px] sm:text-xs font-bold uppercase tracking-[0.1em] sm:tracking-[0.2em] text-stone-400 mt-2 sm:mt-3">Our Products</p>
           </div>
         </div>
       </div>
 
       {/* ── CATEGORIES BAR (EDITORIAL GRID) ──────────────────────── */}
-      <section className="pt-32 pb-32 bg-[#Fcfbf9]">
-        <div className="max-w-[1600px] mx-auto px-8 lg:px-16">
-          <div className="flex flex-wrap justify-center xl:justify-between gap-12 lg:gap-8 text-center">
+      <section className="pt-32 pb-20 sm:pb-32 bg-[#Fcfbf9]">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-16">
+          <div className="flex flex-wrap justify-center xl:justify-between gap-8 sm:gap-12 lg:gap-8 text-center">
             {[
               { title: "DOOR HARDWARE", icon: "🚪" },
               { title: "PLYWOOD & LAMINATES", icon: "🪵" },
@@ -116,7 +116,7 @@ function Index() {
               <span className="h-px w-12 bg-[#cca65c]"></span>
               <span className="text-[#cca65c] text-[10px] font-bold tracking-[0.2em] uppercase">About Us</span>
             </div>
-            <h2 className="font-display text-5xl sm:text-6xl font-bold text-[#1a1814] leading-[1.1] tracking-tight">
+            <h2 className="font-display text-4xl sm:text-6xl font-bold text-[#1a1814] leading-[1.1] tracking-tight">
               Powering Today's Work, <br /> Building Tomorrow's Future
             </h2>
             
@@ -143,18 +143,18 @@ function Index() {
             </div>
           </div>
           
-          <div className="relative h-[800px] w-full">
-            <div className="absolute inset-0 bg-[#cca65c]/5 rounded-sm translate-x-6 translate-y-6 border border-[#cca65c]/20"></div>
+          <div className="relative h-[400px] sm:h-[800px] w-full mt-10 lg:mt-0">
+            <div className="absolute inset-0 bg-[#cca65c]/5 rounded-sm translate-x-4 translate-y-4 sm:translate-x-6 sm:translate-y-6 border border-[#cca65c]/20"></div>
             <img src={hardware} alt="Hardware Showcase" className="absolute inset-0 w-full h-full object-cover rounded-sm shadow-[0_20px_60px_rgba(0,0,0,0.1)]" />
           </div>
         </div>
       </section>
 
       {/* ── BUILDING TRUST SECTION ───────────────────────────────── */}
-      <section className="py-40 bg-[#Fcfbf9]">
-        <div className="max-w-[1600px] mx-auto px-8 lg:px-16 grid lg:grid-cols-2 gap-24 items-center">
-          <div className="relative h-[700px] order-2 lg:order-1">
-            <div className="absolute inset-0 bg-[#cca65c]/5 rounded-sm -translate-x-6 -translate-y-6 border border-[#cca65c]/20"></div>
+      <section className="py-24 sm:py-40 bg-[#Fcfbf9]">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-16 grid lg:grid-cols-2 gap-16 sm:gap-24 items-center">
+          <div className="relative h-[400px] sm:h-[700px] order-2 lg:order-1 mt-10 lg:mt-0">
+            <div className="absolute inset-0 bg-[#cca65c]/5 rounded-sm -translate-x-4 -translate-y-4 sm:-translate-x-6 sm:-translate-y-6 border border-[#cca65c]/20"></div>
             <img src={heroBg} alt="Door Handle" className="absolute inset-0 w-full h-full object-cover rounded-sm shadow-[0_20px_60px_rgba(0,0,0,0.1)]" />
             
             {/* Minimalist Floating Badge */}
@@ -175,14 +175,14 @@ function Index() {
             <p className="mt-8 text-lg text-stone-500 leading-[1.8] font-light max-w-xl">
               We provide high-quality hardware and building materials, from door fittings and laminates to kitchen, bathroom, and industrial solutions, ensuring durability, performance, and unmatched reliability for every single project.
             </p>
-            <div className="mt-14 flex items-center gap-6">
-              <Link to="/about" className="group relative inline-flex h-14 items-center justify-center overflow-hidden bg-[#1a1814] px-10 text-xs font-bold uppercase tracking-[0.2em] text-white transition-all hover:shadow-[0_0_30px_rgba(26,24,20,0.3)]">
+            <div className="mt-10 sm:mt-14 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full">
+              <Link to="/about" className="group w-full sm:w-auto relative inline-flex h-14 items-center justify-center overflow-hidden bg-[#1a1814] px-10 text-xs font-bold uppercase tracking-[0.2em] text-white transition-all hover:shadow-[0_0_30px_rgba(26,24,20,0.3)]">
                 <span className="relative z-10 transition-transform duration-500 group-hover:-translate-y-full">Learn More</span>
                 <span className="absolute inset-0 z-10 flex items-center justify-center translate-y-full transition-transform duration-500 group-hover:translate-y-0 bg-[#cca65c]">
                   Learn More
                 </span>
               </Link>
-              <Link to="/products" className="group inline-flex h-14 items-center justify-center border border-stone-300 bg-transparent px-10 text-xs font-bold uppercase tracking-[0.2em] text-[#1a1814] transition-all hover:border-[#1a1814] hover:bg-[#1a1814] hover:text-white">
+              <Link to="/products" className="group w-full sm:w-auto inline-flex h-14 items-center justify-center border border-stone-300 bg-transparent px-10 text-xs font-bold uppercase tracking-[0.2em] text-[#1a1814] transition-all hover:border-[#1a1814] hover:bg-[#1a1814] hover:text-white">
                 Explore Product
               </Link>
             </div>
@@ -191,26 +191,26 @@ function Index() {
       </section>
 
       {/* ── WHY CHOOSE US SECTION ────────────────────────────────── */}
-      <section className="py-40 bg-white">
-        <div className="max-w-[1600px] mx-auto px-8 lg:px-16">
-          <div className="mb-24 flex flex-col items-center text-center">
+      <section className="py-24 sm:py-40 bg-white">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-16">
+          <div className="mb-16 sm:mb-24 flex flex-col items-center text-center">
             <span className="text-[#cca65c] text-[10px] font-bold tracking-[0.2em] uppercase">Why Choose Us</span>
-            <h2 className="mt-6 font-display text-4xl sm:text-5xl font-bold text-[#1a1814] leading-[1.2] tracking-tight max-w-3xl">
+            <h2 className="mt-4 sm:mt-6 font-display text-3xl sm:text-5xl font-bold text-[#1a1814] leading-[1.2] tracking-tight max-w-3xl">
               Delivering uncompromised quality products and highly reliable solutions you can trust blindly.
             </h2>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-8">
-            <div className="relative overflow-hidden h-[600px] rounded-sm group cursor-pointer">
+          <div className="grid lg:grid-cols-2 gap-4 sm:gap-8">
+            <div className="relative overflow-hidden h-[400px] sm:h-[600px] rounded-sm group cursor-pointer">
               <img src={hardware} alt="Swastik & Company Building" className="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110 filter brightness-90 saturate-50 group-hover:saturate-100" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1a1814] via-[#1a1814]/40 to-transparent flex flex-col justify-end p-12 transition-opacity duration-700">
-                <h3 className="text-4xl font-display font-bold text-white mb-3">30+ Years Experience</h3>
-                <p className="text-stone-300 text-sm leading-[1.8] font-light max-w-md">The bedrock of our reputation. We have spent three decades building an unbreakable bond of reliability and absolute trust across Erode.</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1a1814] via-[#1a1814]/40 to-transparent flex flex-col justify-end p-8 sm:p-12 transition-opacity duration-700">
+                <h3 className="text-3xl sm:text-4xl font-display font-bold text-white mb-3">30+ Years Experience</h3>
+                <p className="text-stone-300 text-xs sm:text-sm leading-[1.8] font-light max-w-md">The bedrock of our reputation. We have spent three decades building an unbreakable bond of reliability and absolute trust across Erode.</p>
               </div>
             </div>
             
-            <div className="grid grid-cols-2 gap-8 h-[600px]">
-              <div className="col-span-2 bg-white border border-stone-200 rounded-sm p-12 flex flex-col justify-center items-center text-center transition-all duration-700 hover:shadow-[0_30px_60px_rgba(0,0,0,0.04)] hover:border-[#cca65c]/30 group">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 h-auto sm:h-[600px]">
+              <div className="col-span-1 sm:col-span-2 bg-white border border-stone-200 rounded-sm p-8 sm:p-12 flex flex-col justify-center items-center text-center transition-all duration-700 hover:shadow-[0_30px_60px_rgba(0,0,0,0.04)] hover:border-[#cca65c]/30 group">
                 <h3 className="text-3xl font-display font-bold text-[#1a1814]">Expert Guidance</h3>
                 <p className="text-stone-500 mt-5 max-w-lg text-sm leading-[1.8] font-light">Our deeply experienced team helps you curate the precise products for your high-end project, meticulously saving your time and costs while maximizing aesthetics.</p>
                 <div className="flex gap-3 mt-10">
@@ -220,7 +220,7 @@ function Index() {
                 </div>
               </div>
               
-              <div className="relative overflow-hidden rounded-sm group cursor-pointer">
+              <div className="relative overflow-hidden rounded-sm group cursor-pointer min-h-[300px] sm:min-h-0">
                 <img src={kitchen} alt="Products" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110 filter brightness-75" />
                 <div className="absolute inset-0 bg-[#1a1814]/60 mix-blend-multiply transition-opacity duration-700 group-hover:opacity-80" />
                 <div className="relative z-10 h-full flex flex-col justify-center items-center text-center p-8">
@@ -229,7 +229,7 @@ function Index() {
                 </div>
               </div>
               
-              <div className="bg-white border border-stone-200 rounded-sm p-8 flex flex-col justify-center items-center text-center transition-all duration-700 hover:shadow-[0_30px_60px_rgba(0,0,0,0.04)] hover:border-[#cca65c]/30">
+              <div className="bg-white border border-stone-200 rounded-sm p-8 flex flex-col justify-center items-center text-center transition-all duration-700 hover:shadow-[0_30px_60px_rgba(0,0,0,0.04)] hover:border-[#cca65c]/30 min-h-[300px] sm:min-h-0">
                 <div className="flex items-end gap-3">
                   <span className="text-6xl font-display font-bold text-[#1a1814] leading-none">4.9</span>
                   <Star className="w-8 h-8 fill-[#cca65c] text-[#cca65c] mb-1" />
