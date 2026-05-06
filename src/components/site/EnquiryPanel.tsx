@@ -3,29 +3,53 @@ import { company, enquiryOptions } from "../../data/site";
 
 export function EnquiryPanel() {
   return (
-    <div className="grid gap-8 rounded-xl border border-border bg-card p-5 shadow-premium lg:grid-cols-[0.9fr_1.1fr] lg:p-8">
-      <div className="hero-field rounded-lg p-8 text-primary-foreground">
-        <p className="text-xs font-bold uppercase tracking-[0.24em] text-primary-foreground/60">Fast enquiry</p>
-        <h3 className="mt-4 font-display text-4xl font-semibold leading-tight">Tell us what your project needs.</h3>
-        <p className="mt-5 text-sm leading-7 text-primary-foreground/75">Share a product category, quantity or site requirement. The team can guide availability, suitable alternatives and bulk pricing.</p>
-        <a href={company.whatsapp} className="mt-8 inline-flex items-center gap-2 rounded-lg bg-copper px-5 py-3 text-sm font-bold text-copper-foreground transition-transform hover:-translate-y-0.5 focus-visible:outline-2">
-          <MessageCircle className="h-4 w-4" /> WhatsApp now
-        </a>
-      </div>
-      <form className="grid gap-4" onSubmit={(event) => event.preventDefault()}>
-        <label className="grid gap-2 text-sm font-bold text-foreground">Your name<input className="h-12 rounded-lg border border-input bg-background px-4 font-normal focus-visible:outline-2" placeholder="Enter your name" /></label>
-        <label className="grid gap-2 text-sm font-bold text-foreground">Phone number<input className="h-12 rounded-lg border border-input bg-background px-4 font-normal focus-visible:outline-2" placeholder="+91" /></label>
-        <div className="grid gap-2 text-sm font-bold text-foreground">
-          Product category
-          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-            {enquiryOptions.map((option) => <button key={option} className="rounded-lg border border-input bg-background px-3 py-3 text-left text-xs font-semibold text-muted-foreground transition-colors hover:border-copper hover:text-foreground focus-visible:outline-2" type="button">{option}</button>)}
-          </div>
+    <div className="overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-2xl shadow-zinc-200/50">
+      <div className="grid lg:grid-cols-[1fr_1.2fr]">
+        <div className="bg-zinc-950 p-8 text-white sm:p-12">
+          <p className="text-xs font-bold uppercase tracking-widest text-amber-500">Fast enquiry</p>
+          <h3 className="mt-4 font-display text-4xl font-bold leading-tight">Tell us what your project needs.</h3>
+          <p className="mt-6 text-sm leading-relaxed text-zinc-400">
+            Share a product category, quantity or site requirement. The team can guide availability, suitable alternatives and bulk pricing.
+          </p>
+          <a href={company.whatsapp} className="mt-10 inline-flex items-center justify-center gap-2 rounded-full bg-amber-500 px-8 py-4 text-sm font-bold tracking-wide text-zinc-950 transition-transform hover:scale-105 hover:bg-amber-400">
+            <MessageCircle className="h-5 w-5" /> WhatsApp now
+          </a>
         </div>
-        <label className="grid gap-2 text-sm font-bold text-foreground">Requirement<textarea className="min-h-28 rounded-lg border border-input bg-background px-4 py-3 font-normal focus-visible:outline-2" placeholder="Mention quantity, project type, preferred brand or delivery need" /></label>
-        <button className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-primary px-5 text-sm font-bold text-primary-foreground shadow-premium transition-transform hover:-translate-y-0.5 focus-visible:outline-2" type="submit">
-          <Send className="h-4 w-4" /> Submit enquiry
-        </button>
-      </form>
+        
+        <form className="p-8 sm:p-12" onSubmit={(event) => event.preventDefault()}>
+          <div className="grid gap-6">
+            <label className="block">
+              <span className="text-xs font-bold uppercase tracking-widest text-zinc-500">Your name</span>
+              <input className="mt-2 w-full rounded-xl border-2 border-zinc-200 bg-zinc-50 px-4 py-3 text-sm font-medium text-zinc-950 outline-none transition-colors focus:border-amber-500 focus:bg-white" placeholder="Enter your name" />
+            </label>
+            
+            <label className="block">
+              <span className="text-xs font-bold uppercase tracking-widest text-zinc-500">Phone number</span>
+              <input className="mt-2 w-full rounded-xl border-2 border-zinc-200 bg-zinc-50 px-4 py-3 text-sm font-medium text-zinc-950 outline-none transition-colors focus:border-amber-500 focus:bg-white" placeholder="+91" />
+            </label>
+            
+            <div className="block">
+              <span className="text-xs font-bold uppercase tracking-widest text-zinc-500">Product category</span>
+              <div className="mt-2 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {enquiryOptions.map((option) => (
+                  <button key={option} className="rounded-xl border-2 border-zinc-200 bg-zinc-50 px-4 py-3 text-left text-xs font-bold text-zinc-500 transition-all hover:border-amber-500 hover:text-zinc-950 focus:border-amber-500 focus:text-zinc-950 focus:outline-none" type="button">
+                    {option}
+                  </button>
+                ))}
+              </div>
+            </div>
+            
+            <label className="block">
+              <span className="text-xs font-bold uppercase tracking-widest text-zinc-500">Requirement</span>
+              <textarea className="mt-2 min-h-32 w-full resize-none rounded-xl border-2 border-zinc-200 bg-zinc-50 px-4 py-3 text-sm font-medium text-zinc-950 outline-none transition-colors focus:border-amber-500 focus:bg-white" placeholder="Mention quantity, project type, preferred brand or delivery need" />
+            </label>
+            
+            <button className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-zinc-950 px-8 py-4 text-sm font-bold tracking-wide text-white transition-transform hover:scale-105 hover:bg-zinc-800" type="submit">
+              <Send className="h-4 w-4" /> Submit enquiry
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
