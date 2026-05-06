@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Star, MessageCircle } from "lucide-react";
+import { useState, useEffect } from "react";
 import heroBg from "../assets/hero-showroom.png";
 import kitchen from "../assets/modular-kitchen.png";
 import hardware from "../assets/hardware-collection.png";
@@ -10,15 +11,36 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [currentBg, setCurrentBg] = useState(0);
+  const bgImages = [heroBg, kitchen, hardware];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentBg((prev) => (prev + 1) % bgImages.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <main className="font-sans text-[#2a2824] bg-[#Fcfbf9] selection:bg-[#cca65c] selection:text-white">
       
       {/* ── ULTRA-PREMIUM HERO ─────────────────────────────────────────── */}
       <section className="relative w-full min-h-[900px] bg-[#1a1814] overflow-hidden">
-        {/* Cinematic Background Gradient */}
+        {/* Cinematic Background Gradient & Sliding Images */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-[#1a1814] via-[#1a1814]/90 to-transparent z-10" />
-          <img src={heroBg} alt="Premium Hardware Background" className="absolute right-0 top-0 w-[70%] h-full object-cover opacity-60 mix-blend-luminosity" />
+          {bgImages.map((img, index) => (
+            <img 
+              key={img}
+              src={img} 
+              alt={`Premium Hardware Background ${index + 1}`} 
+              className={`absolute right-0 top-0 w-full lg:w-[70%] h-full object-cover mix-blend-luminosity transition-all duration-[1500ms] ease-in-out ${
+                index === currentBg 
+                  ? 'opacity-60 translate-x-0 scale-100' 
+                  : 'opacity-0 translate-x-12 scale-105 pointer-events-none'
+              }`} 
+            />
+          ))}
         </div>
 
         <div className="relative z-20 h-full max-w-[1600px] mx-auto px-8 lg:px-16 pt-40 pb-64 flex items-center">
