@@ -1,50 +1,70 @@
 import { Link, Outlet } from "@tanstack/react-router";
 import { Menu, MessageCircle, Phone, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { company, navItems } from "../../data/site";
 
 export function SiteShell() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="flex min-h-screen flex-col bg-zinc-50 font-sans text-zinc-950 selection:bg-zinc-900 selection:text-white">
       {/* HEADER */}
-      <header className="fixed left-1/2 top-6 z-50 w-[calc(100%-3rem)] max-w-5xl -translate-x-1/2 rounded-full border border-white/20 bg-white/70 shadow-2xl shadow-zinc-900/10 backdrop-blur-2xl transition-all">
-        <div className="flex h-16 items-center justify-between px-3 sm:px-4">
-          <Link to="/" className="group flex items-center gap-3 pl-2 outline-none" aria-label="Swastik & Company home" onClick={() => setIsMobileMenuOpen(false)}>
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-zinc-950 font-display text-lg font-black text-white shadow-lg transition-transform group-hover:scale-105">S</div>
-            <span className="hidden leading-none sm:block">
-              <span className="block font-display text-lg font-bold tracking-tight text-zinc-950">Swastik & Co.</span>
-            </span>
-          </Link>
-          
-          <nav className="hidden items-center gap-1 lg:flex">
-            {navItems.map((item) => (
-              <Link 
-                key={item.to} 
-                to={item.to} 
-                className="rounded-full px-5 py-2.5 text-sm font-semibold text-zinc-600 transition-all hover:bg-zinc-100 hover:text-zinc-950"
-                activeProps={{ className: "bg-white text-zinc-950 shadow-sm ring-1 ring-zinc-200/50" }}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="hidden items-center gap-4 sm:flex">
-            <a href={`tel:${company.phone.replaceAll(" ", "")}`} className="inline-flex h-10 items-center justify-center gap-2 rounded-full bg-zinc-950 px-6 text-sm font-bold tracking-wide text-white transition-transform hover:scale-105">
-              <Phone className="h-4 w-4" /> Call Us
-            </a>
-          </div>
-
-          <button 
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-100 text-zinc-950 transition-colors hover:bg-zinc-200 lg:hidden" 
-            aria-label="Toggle menu"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+      <header className={`fixed left-0 top-0 z-50 flex w-full justify-center transition-all duration-500 ${isScrolled ? "px-4 pt-4 sm:px-6" : "px-0 pt-0"}`}>
+        <div 
+          className={`relative w-full transition-all duration-500 ${
+            isScrolled 
+              ? "max-w-5xl rounded-full border border-white/20 bg-white/70 shadow-2xl shadow-zinc-900/10 backdrop-blur-2xl" 
+              : "max-w-full rounded-none border-b border-zinc-200/50 bg-white/90 shadow-none backdrop-blur-xl"
+          }`}
+        >
+          <div 
+            className={`mx-auto flex items-center justify-between transition-all duration-500 ${
+              isScrolled ? "h-16 px-3 sm:px-4" : "h-20 max-w-7xl px-6 sm:px-12 lg:px-24"
+            }`}
           >
-            {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
-        </div>
+            <Link to="/" className="group flex items-center gap-3 pl-2 outline-none" aria-label="Swastik & Company home" onClick={() => setIsMobileMenuOpen(false)}>
+              <div className={`flex items-center justify-center bg-zinc-950 font-display font-black text-white shadow-lg transition-all duration-500 group-hover:scale-105 ${isScrolled ? "h-10 w-10 rounded-full text-lg" : "h-10 w-10 rounded-xl text-lg"}`}>S</div>
+              <span className="hidden leading-none sm:block">
+                <span className={`block font-display font-bold tracking-tight text-zinc-950 transition-all duration-500 ${isScrolled ? "text-lg" : "text-xl"}`}>Swastik & Co.</span>
+              </span>
+            </Link>
+            
+            <nav className="hidden items-center gap-1 lg:flex">
+              {navItems.map((item) => (
+                <Link 
+                  key={item.to} 
+                  to={item.to} 
+                  className="rounded-full px-5 py-2.5 text-sm font-semibold text-zinc-600 transition-all hover:bg-zinc-100 hover:text-zinc-950"
+                  activeProps={{ className: "bg-white text-zinc-950 shadow-sm ring-1 ring-zinc-200/50" }}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+
+            <div className="hidden items-center gap-4 sm:flex">
+              <a href={`tel:${company.phone.replaceAll(" ", "")}`} className={`inline-flex items-center justify-center gap-2 rounded-full bg-zinc-950 px-6 text-sm font-bold tracking-wide text-white transition-transform hover:scale-105 ${isScrolled ? "h-10" : "h-12"}`}>
+                <Phone className="h-4 w-4" /> Call Us
+              </a>
+            </div>
+
+            <button 
+              className={`inline-flex items-center justify-center rounded-full bg-zinc-100 text-zinc-950 transition-colors hover:bg-zinc-200 lg:hidden ${isScrolled ? "h-10 w-10" : "h-12 w-12"}`} 
+              aria-label="Toggle menu"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
 
         {/* MOBILE MENU */}
         {isMobileMenuOpen && (
@@ -72,6 +92,7 @@ export function SiteShell() {
             </nav>
           </div>
         )}
+        </div>
       </header>
 
       {/* MAIN CONTENT */}
