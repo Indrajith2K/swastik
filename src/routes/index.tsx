@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import heroBg from "../assets/hero-showroom.png";
 import kitchen from "../assets/modular-kitchen.png";
 import hardware from "../assets/hardware-collection.png";
+import shopImage1 from "../assets/shopimage1.png";
 import { company } from "../data/site";
 
 export const Route = createFileRoute("/")({
@@ -177,7 +178,7 @@ function Index() {
         <div className="max-w-[1600px] mx-auto px-6 lg:px-16 grid lg:grid-cols-2 gap-16 sm:gap-24 items-center">
           <div className="relative h-[400px] sm:h-[700px] order-2 lg:order-1 mt-10 lg:mt-0">
             <div className="absolute inset-0 bg-[#cca65c]/5 rounded-sm -translate-x-4 -translate-y-4 sm:-translate-x-6 sm:-translate-y-6 border border-[#cca65c]/20"></div>
-            <img src={heroBg} alt="Door Handle" className="absolute inset-0 w-full h-full object-cover rounded-sm shadow-[0_20px_60px_rgba(0,0,0,0.1)]" />
+            <img src={shopImage1} alt="Swastik & Company Building" className="absolute inset-0 w-full h-full object-cover rounded-sm shadow-[0_20px_60px_rgba(0,0,0,0.1)]" />
             
             {/* Minimalist Floating Badge */}
             <div className="absolute -bottom-10 -right-10 bg-white p-10 rounded-sm shadow-[0_30px_60px_rgba(0,0,0,0.08)] hidden md:block border border-stone-100">
